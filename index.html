@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="loginPageStyle.css">
+    <script src="https://kit.fontawesome.com/422f5148d8.js"crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper"> 
+        <div class="title">
+            <span>Login Form</span>
+        </div>
+    <form method="post" action="check.js" onsubmit="return validate()" name="frm">
+        <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text"placeholder="Email or Phone" name="email" required>
+            <div id="email_error" class="val_error"></div>
+        </div>
+        <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password"placeholder="password" name="password" required>
+            <div id="password_error" class="val_error"></div>
+        </div>
+        <div class="pass"><a href="3.forget password.html">Forget Password?</a></div>
+        <div class="row buttom">
+            <input type="submit" value="Login">
+        </div>
+        <div class="signup-link">Not a Registration? <a href="2.signUp.html"> SignUp Now</a></div>
+    </form>
+    </div>
+
+    <script>
+        function validate() {
+	var email = document.frm.email.value;
+	var msg2 = document.getElementById("email_error");
+    if (email == " ") {
+		msg2.innerHTML="email required";
+		msg2.style.color="red";
+        alert("Email is reqired");
+		
+        return false;
+	}
+
+	var password = document.frm.password.value;
+	//var cpassword = document.frm.confirmpassword.value;
+	var msg4=document.getElementById("password_error");
+    if (password == " ") {
+		msg4.innerHTML="password  is required ";
+		msg4.style.color="red";
+        alert("Password is required");
+		
+        return false;
+	}	
+return true;	
+}
+    </script>
+</body>
+</html>
